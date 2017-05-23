@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:paddingBottom="@dimen/activity_vertical_margin"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
@@ -11,55 +11,125 @@
     android:background="@color/bkgndColour"
     tools:context="com.londonappbrewery.bitcointicker.MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/label_default_text"
-        android:id="@+id/priceLabel"
-        android:textSize="45sp"
-        android:textStyle="bold"
-        android:textColor="@color/fontColour"
-        android:layout_centerVertical="true"
-        android:layout_centerHorizontal="true"/>
-
-    <ImageView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/logoImage"
-        android:contentDescription="@string/imageview_desc"
-        android:src="@drawable/bitcoin_image"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"/>
-
     <LinearLayout
-        android:orientation="horizontal"
+        android:id="@+id/topPart"
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_below="@+id/priceLabel"
-        android:gravity="center_vertical|center_horizontal">
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center">
 
         <TextView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:textAppearance="?android:attr/textAppearanceLarge"
-            android:text="@string/base"
-            android:textSize="30sp"
+            android:text="@string/app_name"
+            android:textColor="@color/white"
             android:textStyle="bold"
-            android:id="@+id/textView"
-            android:layout_gravity="center_vertical"
-            android:layout_marginLeft="10dp"
-            android:layout_marginRight="10dp"/>
+            android:textSize="30sp"
+            android:layout_marginTop="12dp"
+            android:layout_marginBottom="12dp" />
 
-        <Spinner
+        <ImageView
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:id="@+id/currency_spinner"
-            android:gravity="center_horizontal"
-            android:spinnerMode="dropdown"
-            android:dropDownSelector="@color/fontColour"
-            />
-
-
+            android:id="@+id/logoImage"
+            android:contentDescription="@string/imageview_desc"
+            android:src="@drawable/bitcoin_image"
+            android:layout_alignParentTop="true"
+            android:layout_centerHorizontal="true" />
     </LinearLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_below="@+id/topPart"
+        android:layout_above="@+id/bottomPart">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            android:gravity="center">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="1 BITCOIN"
+                android:textSize="14sp"
+                android:textColor="#EAEAEA"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_default_text"
+                android:id="@+id/priceLabel"
+                android:textSize="60sp"
+                android:textStyle="bold"
+                android:textColor="@color/colorAccent"
+                android:layout_marginBottom="20dp"
+                android:textAlignment="center"/>
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="VARIATION TODAY"
+                android:textSize="14sp"
+                android:textColor="#EAEAEA"
+                android:textAlignment="center"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/label_default_text"
+                android:id="@+id/priceVariation"
+                android:textSize="30sp"
+                android:textStyle="bold"
+                android:textColor="@color/white"
+                android:textAlignment="center"/>
+        </LinearLayout>
+    </RelativeLayout>
+
+    <RelativeLayout
+        android:id="@+id/bottomPart"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="6dp">
+
+        <LinearLayout
+            android:orientation="horizontal"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center_vertical|center_horizontal">
+
+            <TextView
+                android:id="@+id/textView"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center_vertical"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"
+                android:text="@string/base"
+                android:textAppearance="?android:attr/textAppearanceLarge"
+                android:textSize="30sp" />
+
+            <Spinner
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/currency_spinner"
+                android:gravity="center_horizontal"
+                android:spinnerMode="dropdown"
+                android:dropDownSelector="@color/colorAccent" />
+
+            <!--<android.support.design.widget.FloatingActionButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:fabSize="normal"
+                android:src="@drawable/ic_compare_arrows"
+                android:tint="#ffffff"
+                app:rippleColor="@color/colorAccentRipple"/>-->
+        </LinearLayout>
+    </RelativeLayout>
 
 </RelativeLayout>

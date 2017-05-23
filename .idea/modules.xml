@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/BitcoinTicker-Android.iml" filepath="$PROJECT_DIR$/BitcoinTicker-Android.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/bitcoin-ticker-android-Ivaskuu.iml" filepath="$PROJECT_DIR$/bitcoin-ticker-android-Ivaskuu.iml" />
     </modules>
   </component>
 </project>
